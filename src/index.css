@@ -1,13 +1,336 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  font-size: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  margin:  0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  max-width: 375px;
+  grid-gap: 1rem;
+  grid-template-areas:
+
+'menubtn               header           cartbtn                avatar'
+'prod-imgb             prod-imgb        prod-imgb              prod-imgb'
+'prod-desc             prod-desc        prod-desc              prod-desc'
+'prod-price            prod-price       prod-price             prod-price '
+'addprod-btn           addprod-btn      addprod-btn            addprod-btn'
+'addcart-btn           addcart-btn      addcart-btn            addcart-btn';
+}
+
+
+/*Main Components----------------------------------------------------------------------------------------- */
+
+
+#menubtn {
+  grid-area: menubtn; 
+  transform: translate(2rem, 2rem);
+  cursor:pointer
+}
+
+#header {
+  grid-area: header;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 36px;
+}
+
+#cartbtn {
+  grid-area: cartbtn;
+  transform: translate(3rem, 1.6rem);
+  cursor:pointer
+}
+
+#avatarbtn {
+  grid-area: avatar;
+  width:  25px;
+  height: 25px;
+  transform: translate(1rem, 1.4rem);
+  cursor:pointer
+}
+
+#wrapperimgb {
+  grid-area:  prod-imgb;
+  object-fit: cover;
+  display:    block;
+  width:      100%;
+  height:     100%;
+  margin-bottom: -12rem;
+}
+
+#proddesc {
+  grid-area: prod-desc;
+}
+
+#prodprice {
+  grid-area: prod-price;
+  margin-top: 1rem;
+}
+
+#addprodbtn {
+  grid-area: addprod-btn;
+  margin-top: 1rem;
+  height: 52px;
+}
+
+#addtocartbtn {
+ grid-area: addcart-btn;
+ height: 52px;
+ cursor:pointer
+}
+
+#insidecartbox {
+  grid-area:             prod-imgb;
+  display:               block;
+  background-color:      hsl(0, 0%, 100%);
+  border-radius:         25px;
+  margin:                1rem 1rem 1rem 1rem;
+  transform:             translateZ(1rem)
+  }
+
+
+  /* Inside The Cart------------------------------------------------------------------------------------ */
+
+
+.insidecartempty {
+  display:       block;
+  position:      absolute;
+  font-family:   'Kumbh Sans', sans;
+  color:         hsl(219, 9%, 45%);
+  font-size:     16px;
+  text-align: center;
+  transform: translate(11rem, 11rem);
+}
+
+.insidecarttitle {
+  max-width: 13em;
+  position: absolute;
+  font-family: 'Kumbh Sans', sans-serif;
+  color:       hsl(219, 9%, 45%);
+  font-size:   16px;
+  font-weight: 25;
+  line-height: 2.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transform: translate(9rem, 7rem);
+}
+
+.insidecartbold {
+  display: block;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 16px;
+  color: hsl(0, 0%, 0%);
+  transform: translate(3rem, 3rem);
+}
+
+.insidecartborder {
+  display: block;
+  font-family: 'Kumbh Sans', sans;
+  transform: translate(0rem, 5rem);
+  border-color:  hsl(223, 64%, 98%);
+  border-style:  solid;
+  border-width: .05rem;
+  }
+
+.cartitemthumbnail {
+  display:      block;
+  grid-area:    prod-imgb;
+  transform: translate(-4rem, -4.8rem) scale(30%);
+  border-radius: 2rem;
+}
+
+.trashcan {
+  display: block;
+  transform: translate(30rem, 6rem);
+  padding: 1rem; 
+  cursor: pointer;
+}
+
+
+.insidecarttotal {
+  display: block;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 16px;
+  color: hsl(0, 0%, 0%);
+  transform: translate(19rem, 9.8rem);
+}
+
+.insidecartsticker {
+  display: inline-block;
+  grid-area: cartbtn;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 12px;
+  color: hsl(25, 100%, 94%);
+  background-color: hsl(26, 100%, 55%); 
+  border-radius: 1rem;
+  padding: 0rem 0.3rem 0rem 0.3rem;
+  text-align: center;
+  transform: translate(28.5rem, -5.7rem);
+}
+
+.checkoutbtn {
+  display: block;
+  position: absolute;
+  width: 89%;
+  height: 52px;
+  transform: translate(0rem, -7rem);
+  cursor:pointer
+}
+
+
+/* Smaller Pieces--------------------------------------------------------------------------------------- */
+
+
+.navlinks {
+  font-family:        'Kumbh Sans', sans-serif;
+  font-weight:         400;
+  border-bottom:       0.5rem solid hsl(223, 64%, 98%);
+}
+
+#prev-icon {
+  display:             block;
+  position:            absolute;
+  transform:           translate(-0.8em, -0.8em);
+}
+
+.whitebtnprev {
+  display:           block;
+  position:          absolute;
+  background-color: hsl(0, 0%, 100%);
+  border-radius:     25px;
+  padding:           2rem 2rem 2rem 2rem;
+  transform:         translate(1em, 10em);
+  cursor:            pointer
+  }
+
+.prod-imgb {
+  width:        100%;
+  height:       100%;
+  display:      block;
+  object-fit:   cover;
+}
+
+#next-icon {
+  display:      block;
+  position:     absolute;
+  transform:    translate(-0.5em, -0.8em);
+}
+
+.whitebtnnext {
+  display:            block;
+  position:           absolute;
+  background-color: hsl(0, 0%, 100%);
+  border-radius:      25px;
+  padding:            2rem 2rem 2rem 2rem;
+  transform:          translate(32em, -15.5em);
+  cursor:pointer
+}
+
+.company-name {
+  font-family:        'Kumbh Sans', sans;
+  color:            hsl(26, 100%, 55%);
+  font-size:          12px;
+  text-transform:     uppercase;
+  letter-spacing:     0.2rem;
+  margin-left:        2rem;
+  margin-top:         1rem;
+}
+
+.prod-title {
+  font-family:  'Kumbh Sans', sans-serif;
+  color:        hsl(0, 0%, 0%);
+  font-weight:  700;
+  font-size:    28px;
+  line-height:  3rem;
+  margin-left:  2rem;
+  margin-top:   1rem;
+}
+
+.body {
+  font-family: 'Kumbh Sans', sans-serif;
+  color:       hsl(219, 9%, 45%);
+  font-size:   16px;
+  font-weight: 25;
+  line-height: 2.5rem;
+  margin:      2rem 1.1rem 0rem 2rem;
+}
+
+.prod-price {
+  display: inline-block;
+  font-family: 'Kumbh Sans', sans;
+  color: hsl(0, 0%, 0%);
+  font-size: 28px;
+  transform: translate(2rem, 0rem);
+}
+
+.prod-perc {
+  display: inline-block;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 16px;
+  line-height: 2.5rem;
+  color: hsl(26, 100%, 55%);
+  background-color: hsl(25, 100%, 94%);
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transform: translate(4rem, -0.5rem);
+}
+
+.prod-save {
+  display: inline-block;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 16px;
+  color: hsl(220, 14%, 75%);
+  text-decoration: line-through;
+  transform: translate(14.5rem, -0.5rem);
+}
+
+#minus-btn {
+  display: block;
+  position: absolute;
+  transform: translate(4rem, 0.4rem);
+  padding: 2rem 2rem 2rem 2rem;
+  cursor:pointer
+}
+
+#prod-num {
+  display: block;
+  background-color:hsl(223, 64%, 98%);
+  margin-left:   2rem;
+  margin-right:  2rem;
+  line-height:   5rem;
+  border-radius: 1rem;
+  text-align:    center;
+}
+
+#plus-btn {
+  display: block;
+  position: absolute;
+  transform: translate(30rem, -5rem);
+  padding: 2rem 2rem 2rem 2rem;
+  cursor:pointer
+}
+
+.cartwhite {
+  display: block;
+  position: absolute;
+  filter: brightness(500%);
+  transform: scale(75%) translate(15rem, 2rem);
+}
+
+.orangebtnwhitetext {
+  display: block;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 16px;
+  color: hsl(0, 0%, 100%);
+  background-color:hsl(26, 100%, 55%);
+  margin-left:   2rem;
+  margin-right:  2rem;
+  line-height:   5rem;
+  border-radius: 1rem;
+  text-align:    center;
 }
