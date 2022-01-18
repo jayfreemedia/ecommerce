@@ -23,32 +23,16 @@ function Home  () {
     <CartBtn/>
     <AvatarBtn/>
 
-    {Data.productData.map((item, id) => {
-        return(
-            <ProdBig img1={item.img1} key={id} /> 
-        )
-    })}
+    {Data.productData.map((item, id) => <ProdBig img1={item.img1} key={id} /> )}
 
-    {Data.productData.map((item, id) => {
-        return(
-            <ProdPrice price={item.price.toFixed(2)} percent={item.percent} discount={item.discount.toFixed(2)} key={id} /> 
-        )
-    })}
+    {Data.productData.map((item, id) => <ProdPrice price={item.price.toFixed(2)} percent={item.percent} discount={item.discount.toFixed(2)} key={id} /> )}
 
-    {Data.productData.map((item, id) => {
-        return(
-            <ProdDesc companyname={item.companyname} title={item.title} description={item.description} key={id} /> 
-        )
-    })}
+    {Data.productData.map((item, id) => <ProdDesc companyname={item.companyname} title={item.title} description={item.description} key={id} /> )}
 
     <AddProdBtn/>
     <AddToCartBtn/>
     
-    {Data.productData.map((item, id) => {
-        return( 
-            <InsideCart imgt1={item.imgt1} title={item.title} price={item.price.toFixed(2)} key={id}/>
-        )
-    })}
+    {Data.productData.map((item, id) => <InsideCart imgt1={item.imgt1} title={item.title} price={item.price.toFixed(2)} key={id}/>)}
 
     </div>
   );
