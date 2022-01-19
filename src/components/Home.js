@@ -1,6 +1,7 @@
 import '../index.css';
 import Data from '../components/Data';
 import MenuBtn from '../components/MenuBtn';
+import MenuNav from '../components/MenuNav'
 import Header from '../components/Header';
 import CartBtn from '../components/CartBtn';
 import AvatarBtn from '../components/AvatarBtn';
@@ -19,6 +20,7 @@ function Home  () {
   return (
     <div className='container' >
     <MenuBtn/>
+    <MenuNav/>
     <Header/>
     <CartBtn/>
     <AvatarBtn/>
