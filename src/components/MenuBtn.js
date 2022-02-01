@@ -1,12 +1,13 @@
 import IconMenu from '../images/icon-menu.svg';
 
 
-
 const MenuBtn = () => 
-    
+
+        <>
+        <input type='checkbox' id='openmenu' hidden ></input> 
+        <label htmlFor='openmenu' className='menubtn'>       
+        <img src={IconMenu}  alt='Menu Button' />
+        </label>
+        </>
         
-        <img id= "menubtn" src={IconMenu} onClick={() => console.log('Replace With Nav')} alt='Menu Button' />
-        
-        
-    
 export default MenuBtn

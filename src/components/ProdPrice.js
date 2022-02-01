@@ -1,9 +1,9 @@
-const ProdPrice = (props) => 
+const ProdPrice = (item) => 
 
-        <div id= 'prodprice'>
-            <h1 className= 'prod-price'> ${props.price}</h1>
-            <h2 className= 'prod-perc'>   {props.percent}% </h2>
-            <h3 className= 'prod-save'>  ${props.discount} </h3>
+        <div className= 'prodprice'>
+            <h1 className= 'prod-price'> ${item.price}</h1>
+            <h2 className= 'prod-perc'>   {item.percent}% </h2>
+            <h3 className= 'prod-save'>  ${item.discount} </h3>
         </div>
 
 export default ProdPrice

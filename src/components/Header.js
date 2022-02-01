@@ -1,11 +1,10 @@
 const Header = () => 
    
         <>
-           <h1 id='header'> sneakers </h1>     
+           <h1 className='header'> sneakers </h1>     
         </>
-   
 
-
+        
 export default Header
 
 

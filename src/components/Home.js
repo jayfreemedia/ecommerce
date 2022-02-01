@@ -1,6 +1,6 @@
 import '../index.css';
 import Data from '../components/Data';
-import MenuBtn from '../components/MenuBtn';
+// import MenuBtn from '../components/MenuBtn';
 import MenuNav from '../components/MenuNav'
 import Header from '../components/Header';
 import CartBtn from '../components/CartBtn';
@@ -13,13 +13,11 @@ import AddToCartBtn from '../components/AddToCartBtn';
 import InsideCart from '../components/InsideCart';
 
 
-
-
 function Home  () {
     
   return (
     <div className='container' >
-    <MenuBtn/>
+    {/* <MenuBtn/> */}
     <MenuNav/>
     <Header/>
     <CartBtn/>
@@ -39,6 +37,5 @@ function Home  () {
     </div>
   );
 }
-
 
 export default Home
