@@ -2,7 +2,6 @@ import '../index.css';
 import Data from '../components/Data';
 import MenuNav from '../components/MenuNav'
 import Header from '../components/Header';
-import CartBtn from '../components/CartBtn';
 import AvatarBtn from '../components/AvatarBtn';
 import ProdBig from '../components/ProdBig';
 import ProdDesc from '../components/ProdDesc';
@@ -18,7 +17,6 @@ function Home  () {
     <div className='container' >
     <MenuNav/>
     <Header/>
-    <CartBtn/>
     <AvatarBtn/>
 
     {Data.productData.map((item, id) => <ProdBig img1={item.img1} key={id} /> )}

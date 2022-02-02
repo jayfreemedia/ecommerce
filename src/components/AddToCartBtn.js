@@ -1,9 +1,9 @@
-import IconCart from '../images/icon-cart.svg';
+import {ReactComponent as IconCart}  from '../images/icon-cart.svg';
 
 const AddToCartBtn = () => 
 
         <div className= 'addtocartbtn'>
-                <img className= 'cartwhite' src={IconCart} alt= 'Add To Cart Cart Icon'/>
+                <IconCart className= 'cartwhite' />
                 <h1  className= 'orangebtnwhitetext'> Add to cart</h1>
         </div>
  

@@ -34,7 +34,8 @@
 
 .cartbtn {
   grid-area: cartbtn;
-  transform: translate(3rem, 1.6rem);
+  fill: #69707D;
+  transform: translate(1.5rem, 0.5rem);
   cursor: pointer;
 }
 
@@ -44,6 +45,11 @@
   height: 25px;
   transform: translate(1rem, 1.4rem);
   cursor: pointer;
+}
+
+.avatarbtn:hover{
+  border: .2rem solid hsl(26, 100%, 55%);
+  border-radius: 2rem; 
 }
 
 .wrapperimgb {
@@ -78,7 +84,6 @@
 
 .insidecartbox {
   grid-area: prod-imgb;
-  /* display: none; */
   position: relative;
   background-color: hsl(0, 0%, 100%);
   border-radius: 25px;
@@ -90,6 +95,11 @@
 
 
 /* Navigation ------------------------------------------------------------------------------------------------- */
+
+
+.menuclosebtn:hover, .menubtn:hover, .cartbtn:hover{
+  fill:hsl(26, 100%, 55%);
+}
 
 a{
   text-decoration: none;
@@ -124,6 +134,7 @@ a{
 }
 
 .menubtn {
+  fill: #69707D;
   grid-area: menubtn; 
   transform: translate(0.5rem, 0.5rem);
   cursor: pointer;
@@ -137,6 +148,7 @@ label.menubtn{
 .menuclosebtn{
 display: inline-block;
 padding: 1rem;
+fill: #69707D;
 transform: translate(2rem, 2rem);
 cursor: pointer;
 z-index: 2;
@@ -147,7 +159,7 @@ z-index: 2;
  height: 0%;
  overflow: hidden;
  position: relative;
- transition: opacity 257ms ease-out;
+ /* transition: opacity 257ms ease-in; */
  /* transform: scaleX(0);
  transform-origin: left; 
  transition: transform 257ms, opacity 257ms ease-out; */
@@ -157,20 +169,147 @@ z-index: 2;
   opacity: 1;
   height: 100%;
   position: relative;
-  transition: opacity 257ms ease-in;
+  transition: opacity 257ms ease-out;
   /* transform: scaleX(1);
   transform-origin: left; */
   /* transition: transform 257ms, opacity 257ms ease-in; */
-  
 }
+
+
+
+  /* Inside The Cart------------------------------------------------------------------------------------ */
+
+label.cartbtn{
+  position: relative;
+  margin: auto;
+}
+.insidecartempty {
+  display:       block;
+  position:      absolute;
+  font-family:   'Kumbh Sans', sans;
+  color:         hsl(219, 9%, 45%);
+  font-size:     16px;
+  text-align: center;
+  transform: translate(11rem, 11rem);
+}
+
+.insidecarttitle {
+  max-width: 13em;
+  position: absolute;
+  font-family: 'Kumbh Sans', sans-serif;
+  color:       hsl(219, 9%, 45%);
+  font-size:   16px;
+  font-weight: 25;
+  line-height: 2.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transform: translate(9rem, 7rem);
+}
+
+.insidecartbold {
+  display: block;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 16px;
+  color: hsl(0, 0%, 0%);
+  transform: translate(3rem, 3rem);
+}
+
+.insidecartborder {
+  display: block;
+  font-family: 'Kumbh Sans', sans;
+  transform: translate(0rem, 5rem);
+  border-color:  hsl(223, 64%, 98%);
+  border-style:  solid;
+  border-width: .05rem;
+  }
+
+.cartitemthumbnail {
+  display:      block;
+  grid-area:    prod-imgb;
+  transform: translate(-4rem, -4.8rem) scale(30%);
+  border-radius: 2rem;
+}
+
+.trashcan {
+  transform: translate(32rem, 7rem);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.trashcan:hover{
+  fill: hsl(26, 100%, 55%);
+}
+
+
+.insidecarttotal {
+  display: block;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 16px;
+  color: hsl(0, 0%, 0%);
+  transform: translate(19rem, 9.8rem);
+}
+
+.insidecartsticker {
+  display: block;
+  height: 35%;          /* For background color of */ 
+  width: 50%;           /* of the orange sticker */ 
+  transform: translate(4rem, 0.5rem);
+  grid-area: cartbtn;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 12px;
+  color: hsl(25, 100%, 94%);
+  background-color: hsl(26, 100%, 55%);
+  border-radius: 1rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.checkoutbtn {
+  display: block;
+  position: absolute;
+  width: 89%;
+  height: 52px;
+  transform: translate(0rem, -7rem);
+  z-index: 1;
+  cursor: pointer;
+}
+ 
+  #cartbtncheckbox:not(:checked) ~ div.insidecartbox{
+    opacity: 0;
+    height: 0%;
+    overflow: hidden;
+    position: relative;
+    /* transition: opacity 257ms ease-in; */
+    /* transform: scaleX(0);
+    transform-origin: left; 
+    transition: transform 257ms, opacity 257ms ease-out; */
+    }
+   
+   #cartbtnheckbox:checked ~ div.insidecartbox{
+     opacity: 1;
+     height: 100%;
+     position: relative;
+     transition: opacity 257ms ease-in;
+     /* transform: scaleX(1);
+     transform-origin: left; */
+     /* transition: transform 257ms, opacity 257ms ease-in; */
+   }
 
 
 /* Smaller Components--------------------------------------------------------------------------------------- */
 
+.prod-imgb {
+  width:             100%;
+  height:            100%;
+  display:           block;
+  object-fit:        cover;
+}
+
 .prev-icon {
-  display:             block;
-  position:            absolute;
-  transform:           translate(-0.8em, -0.8em);
+  display:           block;
+  position:          absolute;
+  transform:         translate(-0.8em, -0.8em);
 }
 
 .whitebtnprev {
@@ -183,17 +322,10 @@ z-index: 2;
   cursor:            pointer
   }
 
-.prod-imgb {
-  width:        100%;
-  height:       100%;
-  display:      block;
-  object-fit:   cover;
-}
-
 .next-icon {
-  display:      block;
-  position:     absolute;
-  transform:    translate(-0.5em, -0.8em);
+  display:           block;
+  position:          absolute;
+  transform:         translate(-0.5em, -0.8em);
 }
 
 .whitebtnnext {
@@ -202,7 +334,7 @@ z-index: 2;
   background-color: hsl(0, 0%, 100%);
   border-radius:      25px;
   padding:            2rem 2rem 2rem 2rem;
-  transform:          translate(32em, -15.5em);
+  transform:          translate(32em, -17.4em);
   cursor:pointer
 }
 
@@ -294,7 +426,7 @@ z-index: 2;
 .cartwhite {
   display: block;
   position: absolute;
-  filter: brightness(500%);
+  fill: white;
   transform: scale(75%) translate(15rem, 2rem);
 }
 
@@ -310,97 +442,4 @@ z-index: 2;
   border-radius: 1rem;
   text-align:    center;
 }
-
-
-  /* Inside The Cart------------------------------------------------------------------------------------ */
-
-
-.insidecartempty {
-  display:       block;
-  position:      absolute;
-  font-family:   'Kumbh Sans', sans;
-  color:         hsl(219, 9%, 45%);
-  font-size:     16px;
-  text-align: center;
-  transform: translate(11rem, 11rem);
-}
-
-.insidecarttitle {
-  max-width: 13em;
-  position: absolute;
-  font-family: 'Kumbh Sans', sans-serif;
-  color:       hsl(219, 9%, 45%);
-  font-size:   16px;
-  font-weight: 25;
-  line-height: 2.5rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  transform: translate(9rem, 7rem);
-}
-
-.insidecartbold {
-  display: block;
-  font-family: 'Kumbh Sans', sans;
-  font-size: 16px;
-  color: hsl(0, 0%, 0%);
-  transform: translate(3rem, 3rem);
-}
-
-.insidecartborder {
-  display: block;
-  font-family: 'Kumbh Sans', sans;
-  transform: translate(0rem, 5rem);
-  border-color:  hsl(223, 64%, 98%);
-  border-style:  solid;
-  border-width: .05rem;
-  }
-
-.cartitemthumbnail {
-  display:      block;
-  grid-area:    prod-imgb;
-  transform: translate(-4rem, -4.8rem) scale(30%);
-  border-radius: 2rem;
-}
-
-.trashcan {
-  display: block;
-  transform: translate(30rem, 6rem);
-  padding: 1rem; 
-  cursor: pointer;
-}
-
-
-.insidecarttotal {
-  display: block;
-  font-family: 'Kumbh Sans', sans;
-  font-size: 16px;
-  color: hsl(0, 0%, 0%);
-  transform: translate(19rem, 9.8rem);
-}
-
-.insidecartsticker {
-  display: inline-block;
-  grid-area: cartbtn;
-  font-family: 'Kumbh Sans', sans;
-  font-size: 12px;
-  color: hsl(25, 100%, 94%);
-  background-color: hsl(26, 100%, 55%); 
-  border-radius: 1rem;
-  padding: 0rem 0.3rem 0rem 0.3rem;
-  text-align: center;
-  transform: translate(28.5rem, -5.7rem);
-}
-
-.checkoutbtn {
-  display: block;
-  position: absolute;
-  width: 89%;
-  height: 52px;
-  transform: translate(0rem, -7rem);
-  z-index: 1;
-  cursor: pointer;
- 
-}
-
 
