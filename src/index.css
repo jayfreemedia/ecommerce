@@ -125,8 +125,13 @@ a{
 
 .menubtn {
   grid-area: menubtn; 
-  transform: translate(2rem, 2rem);
+  transform: translate(0.5rem, 0.5rem);
   cursor: pointer;
+}
+
+label.menubtn{
+  position: relative;
+  margin: auto;
 }
 
 .menuclosebtn{
@@ -139,18 +144,24 @@ z-index: 2;
 
 #menucheckbox:not(:checked) ~ div.menunavbg{
  opacity: 0;
- transform: scaleX(0);
- transform-origin: left;
- position: relative; 
- transition: transform 257ms, opacity 257ms ease-out;
+ height: 0%;
+ overflow: hidden;
+ position: relative;
+ transition: opacity 257ms ease-out;
+ /* transform: scaleX(0);
+ transform-origin: left; 
+ transition: transform 257ms, opacity 257ms ease-out; */
  }
 
 #menucheckbox:checked ~ div.menunavbg{
   opacity: 1;
-  transform: scaleX(1);
-  transform-origin: left;
+  height: 100%;
   position: relative;
-  transition: transform 257ms, opacity 257ms ease-in;
+  transition: opacity 257ms ease-in;
+  /* transform: scaleX(1);
+  transform-origin: left; */
+  /* transition: transform 257ms, opacity 257ms ease-in; */
+  
 }
 
 
