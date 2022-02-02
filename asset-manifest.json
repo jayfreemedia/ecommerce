@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ecommerce/static/css/main.7790b85b.chunk.css",
-    "main.js": "/ecommerce/static/js/main.e81a938e.chunk.js",
-    "main.js.map": "/ecommerce/static/js/main.e81a938e.chunk.js.map",
+    "main.css": "/ecommerce/static/css/main.099327cb.chunk.css",
+    "main.js": "/ecommerce/static/js/main.5c33110a.chunk.js",
+    "main.js.map": "/ecommerce/static/js/main.5c33110a.chunk.js.map",
     "runtime-main.js": "/ecommerce/static/js/runtime-main.6b105c46.js",
     "runtime-main.js.map": "/ecommerce/static/js/runtime-main.6b105c46.js.map",
     "static/js/2.330531d3.chunk.js": "/ecommerce/static/js/2.330531d3.chunk.js",
@@ -10,12 +10,12 @@
     "static/js/3.2d293c29.chunk.js": "/ecommerce/static/js/3.2d293c29.chunk.js",
     "static/js/3.2d293c29.chunk.js.map": "/ecommerce/static/js/3.2d293c29.chunk.js.map",
     "index.html": "/ecommerce/index.html",
-    "static/css/main.7790b85b.chunk.css.map": "/ecommerce/static/css/main.7790b85b.chunk.css.map",
+    "static/css/main.099327cb.chunk.css.map": "/ecommerce/static/css/main.099327cb.chunk.css.map",
     "static/js/2.330531d3.chunk.js.LICENSE.txt": "/ecommerce/static/js/2.330531d3.chunk.js.LICENSE.txt",
-    "static/media/icon-cart.539ec608.svg": "/ecommerce/static/media/icon-cart.539ec608.svg",
-    "static/media/icon-close.c3904486.svg": "/ecommerce/static/media/icon-close.c3904486.svg",
-    "static/media/icon-delete.1fd1f1f7.svg": "/ecommerce/static/media/icon-delete.1fd1f1f7.svg",
-    "static/media/icon-menu.c6107d03.svg": "/ecommerce/static/media/icon-menu.c6107d03.svg",
+    "static/media/icon-cart.0c8e53fc.svg": "/ecommerce/static/media/icon-cart.0c8e53fc.svg",
+    "static/media/icon-close.9db4441d.svg": "/ecommerce/static/media/icon-close.9db4441d.svg",
+    "static/media/icon-delete.d312eab8.svg": "/ecommerce/static/media/icon-delete.d312eab8.svg",
+    "static/media/icon-menu.bd81dce7.svg": "/ecommerce/static/media/icon-menu.bd81dce7.svg",
     "static/media/icon-minus.f5073aa8.svg": "/ecommerce/static/media/icon-minus.f5073aa8.svg",
     "static/media/icon-next.9621183a.svg": "/ecommerce/static/media/icon-next.9621183a.svg",
     "static/media/icon-plus.b297868c.svg": "/ecommerce/static/media/icon-plus.b297868c.svg",
@@ -28,7 +28,7 @@
   "entrypoints": [
     "static/js/runtime-main.6b105c46.js",
     "static/js/2.330531d3.chunk.js",
-    "static/css/main.7790b85b.chunk.css",
-    "static/js/main.e81a938e.chunk.js"
+    "static/css/main.099327cb.chunk.css",
+    "static/js/main.5c33110a.chunk.js"
   ]
 }
