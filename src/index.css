@@ -8,19 +8,25 @@
   padding: 0;
 }
 
+
+
+/* Grid Template Area Container--------------------------------------------------------------------------- */
 .container {
   display: grid;
   max-width: 375px;
   grid-gap: 1rem;
   grid-template-areas:
 
-'menubtn               header           cartbtn                avatar'
-'prod-imgb             prod-imgb        prod-imgb              prod-imgb'
+'menu-btn              header           cart-btn               avatar'
+'prod-img-big          prod-img-big     prod-img-big           prod-img-big'
 'prod-desc             prod-desc        prod-desc              prod-desc'
 'prod-price            prod-price       prod-price             prod-price '
 'addprod-btn           addprod-btn      addprod-btn            addprod-btn'
 'addcart-btn           addcart-btn      addcart-btn            addcart-btn';
 }
+
+
+
 
 
 
@@ -32,14 +38,14 @@
   font-size: 36px;
 }
 
-.cartbtn {
-  grid-area: cartbtn;
+.cart-btn {
+  grid-area: cart-btn;
   fill: #69707D;
   transform: translate(1.5rem, 0.5rem);
   cursor: pointer;
 }
 
-.avatarbtn {
+.avatar-btn {
   grid-area: avatar;
   width: 25px;
   height: 25px;
@@ -47,43 +53,35 @@
   cursor: pointer;
 }
 
-.avatarbtn:hover{
+.avatar-btn:hover{
   border: .2rem solid hsl(26, 100%, 55%);
   border-radius: 2rem; 
 }
 
-.wrapperimgb {
-  grid-area: prod-imgb;
-  object-fit: cover;
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin-bottom: -12rem;
-}
 
-.proddesc {
+.prod-desc {
   grid-area: prod-desc;
 }
 
-.prodprice {
+.prod-price {
   grid-area: prod-price;
   margin-top: 1rem;
 }
 
-.addprodbtn {
+.add-prod-btn {
   grid-area: addprod-btn;
   margin-top: 1rem;
   height: 52px;
 }
 
-.addtocartbtn {
+.add-to-cart-btn {
  grid-area: addcart-btn;
  height: 52px;
  cursor: pointer
 }
 
-.insidecartbox {
-  grid-area: prod-imgb;
+.inside-cart-box {
+  grid-area: prod-img-big;
   position: relative;
   background-color: hsl(0, 0%, 100%);
   border-radius: 25px;
@@ -94,10 +92,13 @@
 
 
 
-/* Navigation ------------------------------------------------------------------------------------------------- */
 
 
-.menuclosebtn:hover, .menubtn:hover, .cartbtn:hover{
+
+/* Menu Navigation ------------------------------------------------------------------------------------------------- */
+
+
+.menu-close-btn:hover, .menu-btn:hover, .cart-btn:hover{
   fill:hsl(26, 100%, 55%);
 }
 
@@ -105,7 +106,7 @@ a{
   text-decoration: none;
 }
 
-.menunavtext{
+.menu-nav-text{
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -117,35 +118,35 @@ a{
   cursor: pointer;
 }
 
-.menunav {
+.menu-nav {
   width: 70%;
   height: 100%;
   background-color:hsl(0, 0%, 100%);
   z-index: 2;
 }
 
-.menunavbg{
+.menu-nav-bg{
   background-color: hsl(0, 0%, 0%, 75%);
-  grid-column-start: menubtn;
+  grid-column-start: menu-btn;
   grid-column-end: avatar;
-  grid-row-start: menubtn;
+  grid-row-start: menu-btn;
   grid-row-end: addcart-btn;
   z-index: 2;
 }
 
-.menubtn {
+.menu-btn {
   fill: #69707D;
-  grid-area: menubtn; 
+  grid-area: menu-btn; 
   transform: translate(0.5rem, 0.5rem);
   cursor: pointer;
 }
 
-label.menubtn{
+label.menu-btn{
   position: relative;
   margin: auto;
 }
 
-.menuclosebtn{
+.menu-close-btn{
 display: inline-block;
 padding: 1rem;
 fill: #69707D;
@@ -154,7 +155,7 @@ cursor: pointer;
 z-index: 2;
 }
 
-#menucheckbox:not(:checked) ~ div.menunavbg{
+#menu-checkbox:not(:checked) ~ div.menu-nav-bg{
  opacity: 0;
  height: 0%;
  overflow: hidden;
@@ -165,7 +166,7 @@ z-index: 2;
  transition: transform 257ms, opacity 257ms ease-out; */
  }
 
-#menucheckbox:checked ~ div.menunavbg{
+#menu-checkbox:checked ~ div.menu-nav-bg{
   opacity: 1;
   height: 100%;
   position: relative;
@@ -177,25 +178,87 @@ z-index: 2;
 
 
 
-  /* Inside The Cart------------------------------------------------------------------------------------ */
 
-label.cartbtn{
+
+
+/* Product Image and Thumbnail Navigation------------------------------------------------------------------------ */
+
+.container-prod-img-nav {
+  grid-area: prod-img-big;
+  /* object-fit: cover; */
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin-bottom: -10rem;
+}
+
+.prod-img-big {
+  width:             100%;
+  height:            100%;
+  display:           block;
+  object-fit:        cover;
+}
+
+.prev-icon {
+  display:           block;
+  grid-area:         prod-img-big;
+  position:          absolute;
+  width:             auto;
+  height:            auto;
+  transform:         translate(2rem, 12rem);
+  background-color: hsl(0, 0%, 100%);
+  stroke:           #1D2026;
+  border-radius:     4rem;
+  padding:           1rem 1.5rem 1rem 1rem;
+  cursor:            pointer;
+}
+
+
+.next-icon {
+    display:           block;
+    grid-area:         prod-img-big;
+    position:          absolute;
+    width:             auto;
+    height:            auto;
+    transform:         translate(32rem, -15.5rem);
+    background-color: hsl(0, 0%, 100%);
+    stroke:           #1D2026;
+    border-radius:     4rem;
+    padding:           1rem 1.3rem 1rem 1.2rem;
+    cursor:            pointer;
+  }
+
+  .next-icon:hover, .prev-icon:hover {
+    stroke:         hsl(26, 100%, 55%)
+  }
+
+
+
+
+
+
+/* Inside The Cart-------------------------------------------------------------------------------------- */
+
+label.cart-btn{
   position: relative;
   margin: auto;
 }
-.insidecartempty {
+
+.inside-cart-empty {
   display:       block;
   position:      absolute;
   font-family:   'Kumbh Sans', sans;
   color:         hsl(219, 9%, 45%);
   font-size:     16px;
-  text-align: center;
-  transform: translate(11rem, 11rem);
+  text-align:    center;
+  transform:     translate(11rem, 12rem);
+  z-index:       1;
 }
 
-.insidecarttitle {
-  max-width: 13em;
+.inside-cart-prod-title {
+  display: block;
   position: absolute;
+  max-width: 13rem;
   font-family: 'Kumbh Sans', sans-serif;
   color:       hsl(219, 9%, 45%);
   font-size:   16px;
@@ -204,58 +267,25 @@ label.cartbtn{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  transform: translate(9rem, 7rem);
+  transform: translate(9rem, 8.3rem);
 }
 
-.insidecartbold {
+.inside-cart-total {
   display: block;
-  font-family: 'Kumbh Sans', sans;
+  position: absolute;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 16px;
   color: hsl(0, 0%, 0%);
-  transform: translate(3rem, 3rem);
+  transform: translate(19rem, 11rem);
 }
 
-.insidecartborder {
+.inside-cart-badge {
   display: block;
-  font-family: 'Kumbh Sans', sans;
-  transform: translate(0rem, 5rem);
-  border-color:  hsl(223, 64%, 98%);
-  border-style:  solid;
-  border-width: .05rem;
-  }
-
-.cartitemthumbnail {
-  display:      block;
-  grid-area:    prod-imgb;
-  transform: translate(-4rem, -4.8rem) scale(30%);
-  border-radius: 2rem;
-}
-
-.trashcan {
-  transform: translate(32rem, 7rem);
-  cursor: pointer;
-  z-index: 2;
-}
-
-.trashcan:hover{
-  fill: hsl(26, 100%, 55%);
-}
-
-
-.insidecarttotal {
-  display: block;
-  font-family: 'Kumbh Sans', sans;
-  font-size: 16px;
-  color: hsl(0, 0%, 0%);
-  transform: translate(19rem, 9.8rem);
-}
-
-.insidecartsticker {
-  display: block;
+  position: relative;
   height: 35%;          /* For background color of */ 
   width: 50%;           /* of the orange sticker */ 
   transform: translate(4rem, 0.5rem);
-  grid-area: cartbtn;
+  grid-area: cart-btn;
   font-family: 'Kumbh Sans', sans;
   font-size: 12px;
   color: hsl(25, 100%, 94%);
@@ -265,17 +295,54 @@ label.cartbtn{
   z-index: 1;
 }
 
-.checkoutbtn {
+.inside-cart-bold-title {
+  display: none;
+  position: absolute;
+  font-family: 'Kumbh Sans', sans;
+  font-size: 16px;
+  color: hsl(0, 0%, 0%);
+  transform: translate(3rem, 2rem);
+}
+
+.inside-cart-border {
+  display: block;
+  position: relative;
+  font-family: 'Kumbh Sans', sans;
+  transform: translate(0rem, 5rem);
+  border-color:  hsl(223, 64%, 98%);
+  border-style:  solid;
+  border-width: .05rem;
+  }
+
+.cart-prod-thumbnail {
+  display:      block;
+  position:     absolute;
+  grid-area:    prod-img-big;
+  transform:    translate(-4rem, 0rem) scale(30%);
+  border-radius: 2rem;
+}
+
+.trash-can {
+  transform: translate(32rem, 7rem);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.trash-can:hover{
+  fill: hsl(26, 100%, 55%);
+}
+
+.checkout-btn {
   display: block;
   position: absolute;
   width: 89%;
   height: 52px;
-  transform: translate(0rem, -7rem);
+  transform: translate(0rem, 15rem);
   z-index: 1;
   cursor: pointer;
 }
  
-  #cartbtncheckbox:not(:checked) ~ div.insidecartbox{
+  #cart-btn-checkbox:not(:checked) ~ div.inside-cart-box{
     opacity: 0;
     height: 0%;
     overflow: hidden;
@@ -286,57 +353,19 @@ label.cartbtn{
     transition: transform 257ms, opacity 257ms ease-out; */
     }
    
-   #cartbtnheckbox:checked ~ div.insidecartbox{
+   #cart-btn-checkbox:checked ~ div.inside-cart-box{
      opacity: 1;
-     height: 100%;
+     height: 90%;
      position: relative;
-     transition: opacity 257ms ease-in;
+     transition: opacity 100ms ease-in;
      /* transform: scaleX(1);
      transform-origin: left; */
      /* transition: transform 257ms, opacity 257ms ease-in; */
    }
 
 
-/* Smaller Components--------------------------------------------------------------------------------------- */
 
-.prod-imgb {
-  width:             100%;
-  height:            100%;
-  display:           block;
-  object-fit:        cover;
-}
-
-.prev-icon {
-  display:           block;
-  position:          absolute;
-  transform:         translate(-0.8em, -0.8em);
-}
-
-.whitebtnprev {
-  display:           block;
-  position:          absolute;
-  background-color: hsl(0, 0%, 100%);
-  border-radius:     25px;
-  padding:           2rem 2rem 2rem 2rem;
-  transform:         translate(1em, 10em);
-  cursor:            pointer
-  }
-
-.next-icon {
-  display:           block;
-  position:          absolute;
-  transform:         translate(-0.5em, -0.8em);
-}
-
-.whitebtnnext {
-  display:            block;
-  position:           absolute;
-  background-color: hsl(0, 0%, 100%);
-  border-radius:      25px;
-  padding:            2rem 2rem 2rem 2rem;
-  transform:          translate(32em, -17.4em);
-  cursor:pointer
-}
+   /* Smaller Components--------------------------------------------------------------------------------------- */
 
 .company-name {
   font-family:        'Kumbh Sans', sans;
@@ -423,14 +452,14 @@ label.cartbtn{
   cursor:pointer
 }
 
-.cartwhite {
+.cart-white {
   display: block;
   position: absolute;
   fill: white;
   transform: scale(75%) translate(15rem, 2rem);
 }
 
-.orangebtnwhitetext {
+.orange-btn-white-text {
   display: block;
   font-family: 'Kumbh Sans', sans;
   font-size: 16px;
