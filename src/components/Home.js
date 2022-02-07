@@ -9,24 +9,21 @@ import ProdPrice from '../components/ProdPrice';
 import CartControls from '../components/CartControls';
 
 
-function Home  () {
-  
+const Home = () => {
+
         return (
           <div className='container' >
           <MenuNav/>
           <Header/>
           <AvatarBtn/>
 
-          {Data.productData.map((item, id) => <ProdImgNav img1={item.img1} key={id} /> )}
+          {Data.productData.map((item) => <ProdImgNav img1={item.img1} key={item.id} /> )}
 
-          {Data.productData.map((item, id) => <ProdPrice price={item.price.toFixed(2)}  percent={item.percent} discount={item.discount.toFixed(2)} key={id} /> )}
+          {Data.productData.map((item) => <ProdPrice price={item.price.toFixed(2)}  percent={item.percent} discount={item.discount.toFixed(2)} key={item.id} /> )}
 
-          {Data.productData.map((item, id) => <ProdDesc companyname={item.companyname} title={item.title} description={item.description} key={id} /> )}
+          {Data.productData.map((item) => <ProdDesc companyname={item.companyname} title={item.title} description={item.description} key={item.id} /> )}
 
-          {/* <AddProdBtn/>
-          <AddToCartBtn/> */}
-          
-          {Data.productData.map((item, id) => <CartControls imgt1={item.imgt1} title={item.title} price={item.price.toFixed(2)} key={id}/>)}
+          {Data.productData.map((item) => <CartControls imgt1={item.imgt1} title={item.title} price={item.price.toFixed(2)} key={item.id}/>)}
 
           </div>
         );

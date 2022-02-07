@@ -25,6 +25,8 @@ const Data = {
           percent: 50,
           discount: 250.00,  
         }  
+
+        
     ],
 }
 
